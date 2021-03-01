@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ShopApp</title>
+    <link href="/modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <partial name="_navbar" />
+    <div class="container pt-100 mb-5">
+        @if (TempData["message"] != null)
+        {
+            <partial name="_resultmessage" model="@(TempData.Get< ResultMessage>("message"))" />
+        }
+
+        @RenderBody()
+    </div>
+
+    <script src="/modules/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="/modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/8707ccc220.js" crossorigin="anonymous"></script>
+
+    @RenderSection("Scripts",false)
+</body>
+</html>
